@@ -37,7 +37,19 @@ router.patch('/:id',
     requireAuth, 
     async (req: Request, res: Response) => {
         //@TODO try it yourself
-        res.send(500).send("not implemented")
+        let { id } = req.params;
+        let { url } = req.body.url;
+        let { caption } = req.body.caption;
+
+        if (!id){
+            res.send(500).send("Add the id of the item you'd like to patch");
+        };
+
+        if ((!url) && (!caption)){
+            res.send(500).send("Please enter a url or caption to patch")
+        }
+
+        //res.send(500).send("not implemented")
 });
 
 
