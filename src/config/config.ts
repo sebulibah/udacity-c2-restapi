@@ -1,13 +1,13 @@
 export const config = {
   "dev": {
-    "username": "sebulibah",
-    "password": "adminadmin",
-    "database": "postgres",
-    "host": "ud-dev-postgres.clcefsx8ateo.us-east-2.rds.amazonaws.com",
+    "username": process.env.RDS_USERNAME,
+    "password": process.env.RDS_PASSWORD,
+    "database": process.env.RDS_DATABASE,
+    "host": process.env.RDS_HOST,
     "dialect": "postgres",
-    "aws_region": "us-east-2b",
-    "aws_profile": "default",
-    "aws_media_bucket": "udagram-997720287978-dev"
+    "aws_region": process.env.AWS_REGION,
+    "aws_profile": process.env.AWS_PROFILE,
+    "aws_media_bucket": process.env.AWS_MEDIA_BUCKET
   },
   "prod": {
     "username": "",
